@@ -9,15 +9,25 @@
     }
     
     .header {
-        @include transition(all, ease-in, 0.2s);
+        &.fadeOut{
+            @include hide-object;
+        }
+        &.fadeIn{
+            @include show-object;
+        }
+        box-shadow: 0 4px 7px -7px $color-grey--wash;
+        @include transition(all, ease-in, 0.6s);
         border-bottom: 1px solid white;
         background-color: $color--white;
         z-index: 99;
         width: 100%;
         float: left;
         clear: both;
+        position: relative;
         @media (min-width: $screen-sm-min) {
             height: 80px;
+            position: absolute;
+            //@include show-object;
         }
         .container {
             @media (max-width: $screen-sm-min) {
@@ -29,6 +39,7 @@
     }
     
     .toggleMain {
+        position: relative;
         z-index: -1;
         float: left;
         left: 0%;
@@ -43,6 +54,9 @@
     }
     
     .main {
+        @media (min-width: $screen-sm) {
+            margin-top: 80px;
+        }
         left: 0%;
         position: relative;
         width: 100%;

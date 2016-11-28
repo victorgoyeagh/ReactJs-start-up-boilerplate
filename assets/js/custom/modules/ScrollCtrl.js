@@ -1,4 +1,4 @@
-import { windowData as WindowData } from "./HelperFunctions";
+import { windowData as WindowData } from "./HelperFunctions"; 
 
 export class ScrollTo {
 

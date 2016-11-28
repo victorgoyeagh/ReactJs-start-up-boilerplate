@@ -18,6 +18,14 @@ export class ClassHelper {
             this.element.className = classes.join(' ');
         }
     }
+    swap(currClass, newClass){
+        let obj = new ClassHelper(this.element);
+        if (obj.contains(currClass)){
+            obj.remove(currClass);
+        }
+        obj.add(newClass);
+        obj = null;
+    }
     remove(name) {
         var classes = this.element.className.trim().split(/\s+/);
         var ix = classes.indexOf(name);

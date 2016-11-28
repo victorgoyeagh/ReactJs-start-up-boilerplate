@@ -1,16 +1,11 @@
 import { scrollTo as ScrollTo } from "./modules/ScrollCtrl";
 import { menuCtrl as MenuCtrl } from "./modules/MenuCtrl";
+import { banner as Banner } from "./modules/ReactStuff";
+import React from "react";
+import ReactDOM from "react-dom";
 
 new ScrollTo("js-scrollTop", 0);
-new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain");
+new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
 
-import React from 'react';
-import ReactDOM from 'react-dom';
 
-class World extends React.Component {
-  render() {
-    return <h1>World</h1>
-  }
-}
-
-ReactDOM.render(<World/>, document.getElementById('js-app'));
+ReactDOM.render(<Banner />, document.getElementById("js-rat-race"));

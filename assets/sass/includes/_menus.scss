@@ -44,14 +44,16 @@
                         }
                         &.dropdown {
                             ul.dropdown-menu,
-                            div.dropdown-menu {
-                                @include hide-object;
+                            div.dropdown-menu { 
+                                @media (min-width: $screen-sm) {
+                                    @include hide-object();
+                                }
                                 @include transition(all, ease-in, 0.2);
                                 display: block;
                                 content: '';
-                                position: absolute; 
-                                //left: 0px;
-                                //width: 100%;  
+                                position: absolute;
+                                @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
+                                border-radius: 0px; 
                                 @include transition(all, ease-in, 0.2s);
 
                                 a {
@@ -83,10 +85,10 @@
             position: absolute;
             top: 0px;
             width: 100%;
-            @media (max-width: $screen-sm-min) {
+            @media (min-width: $screen-sm) {
                 @include transition(all, ease-out, 0.2s);
             }
-            @media (min-width: $screen-sm-min) {
+            @media (min-width: $screen-sm) {
                 left: 0 !important;
             }
             .navbar-toggle {
@@ -104,7 +106,8 @@
                 display: inline-block;
                 position: relative;
                 @media (min-width: $screen-sm) {
-                    margin: 12px 26px
+                    margin: 14px 0px 12px -15px;
+                    //margin: 12px 26px
                 }
                 img {
                     @include responsive-image;
