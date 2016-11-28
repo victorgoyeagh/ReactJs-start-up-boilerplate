@@ -34,32 +34,15 @@ export class MenuCtrl {
             let header = document.querySelectorAll(".header")[0];
             let navStyle = header.style;
             let ns = new ClassHelper(header);
-
+            
             if (scrollPos < currPosition) {
-                 console.debug("scrolling upwards");
-                if (window.scrollY < 120) {
-                    ns.swap("fadeIn", "fadeOut");
-                    navStyle.position = "absolute";
-                }
-                if (window.scrollY < 120) {
-                    ns.swap("fadeOut", "fadeIn");
-                }
-            } else {
-                console.debug("scrolling downwards");
-                if (window.scrollY > 80) {
-                    ns.swap("fadeIn", "fadeOut");
-                }
-                if (window.scrollY > 200) {
-                    navStyle.position = "fixed";
-                    ns.swap("fadeOut", "fadeIn");
-                } 
-            }
-
-            /*if (window.scrollY > 200) {
                 navStyle.position = "fixed";
-            } else {
-                navStyle.position = "absolute";
-            }*/
+                navStyle.top = "0px";
+                console.debug("scrolling upwards");
+            } else { 
+                navStyle.top = "-80px"; 
+                console.debug("scrolling downwards");
+            }
             currPosition = scrollPos;
         });
     }

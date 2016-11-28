@@ -1,3 +1,13 @@
+.todo-list {
+    &__item {
+        &--outdoor {
+            background: grey;
+        }
+    }
+}
+
+
+
 .services {
     min-height: 450px !important;
     text-align: center;

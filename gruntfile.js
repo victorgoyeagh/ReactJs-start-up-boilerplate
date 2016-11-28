@@ -38,7 +38,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: ['assets/**/*.js', 'assets/**/*.jsx'],
-                tasks: ['uglify', 'clean'],
+                tasks: ['webpack', 'uglify', 'clean'],
                 options: {
                     livereload: true,
                 }
