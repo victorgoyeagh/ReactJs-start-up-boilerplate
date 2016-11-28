@@ -13,5 +13,5 @@ export class Banner extends React.Component {
 }
 
 module.exports = {
-  banner: Banner
+  banner : Banner
 }

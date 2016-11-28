@@ -1,6 +1,6 @@
 import { scrollTo as ScrollTo } from "./modules/ScrollCtrl";
 import { menuCtrl as MenuCtrl } from "./modules/MenuCtrl";
-import { banner as Banner } from "./modules/ReactStuff";
+import { banner as Banner } from "./modules/React";
 import React from "react";
 import ReactDOM from "react-dom";
 
