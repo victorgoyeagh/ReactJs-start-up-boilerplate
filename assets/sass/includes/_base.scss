@@ -56,11 +56,11 @@ table {
     color: grey;
     thead,
     tfoot {
-        display: block;
+        display: inline-grid;
     }
     th,
     td {
-        display: block;
+        display: inline-grid;
     }
 }
 

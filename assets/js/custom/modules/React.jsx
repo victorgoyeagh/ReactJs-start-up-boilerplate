@@ -1,16 +1,15 @@
-import React from 'react'; 
+import React from 'react';
+import ReactDOM from 'react-dom';
 var classNames = require('classnames');
 
 export class TodoListContainer extends React.Component {
-  getInitialState() {
-    return (
-      (this.props.todoItems) ? { data: this.props.todoItems } : { data: [] }
-    )
-  }
+
   render() {
     return (
-      <div className="row">
+      <div className="row todo-container">
         <div className="col-xs-12 col-sm-12 col-md-12">
+          <p>{this.state}</p>
+          <h1>{this.props.header}</h1>
           <AddItem />
           <TodoList todoItems={this.props.todoItems} />
         </div>
@@ -24,13 +23,13 @@ class AddItem extends React.Component {
     return (
       <div className="row">
         <div className="col-xs-4">
-          <input type="text" name="newItemName" title="Item Name" value="" />
+          <input className="form-control" type="text" name="newItemName" placeholder="Enter name" title="Item Name" value="" />
         </div>
         <div className="col-xs-4">
-          <input type="text" name="newOccupation" title="Item Occupation" value="" />
-        </div> 
+          <input className="form-control" type="text" name="newOccupation" placeholder="Enter occupation" title="Item Occupation" value="" />
+        </div>
         <div className="col-xs-4">
-          <button name="btnSearch" className="btn btn-default">Go</button>
+          <button className="form-control" name="btnAddNewItem" className="btn btn-default">Add new item</button>
         </div>
       </div>
     )
@@ -41,35 +40,50 @@ class TodoList extends React.Component {
   render() {
     var items = Array.prototype.map.call(this.props.todoItems, function (item) {
       return (
-        <TodoItem name={item.name} occupation={item.occupation} item={item} IsOutdoor={item.IsOutdoor} />
+        <TodoItem name={item.name} occupation={item.occupation} item={item} isOutdoor={item.isOutdoor} />
       )
     });
     return (
-      <div classID="todo" className="todo-list">
-        {items}
-      </div>
+      <table classID="todo" className="todo-list form-group">
+        <thead>
+          <tr>
+            <th className="col-xs-4">
+              <h3>Fullname</h3>
+            </th>
+            <th className="col-xs-4">
+              <h3>Occupation</h3>
+            </th>
+            <td className="col-xs-4">
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          {items}
+        </tbody>
+      </table>
     )
   }
 }
 
 class TodoItem extends React.Component {
-  render() {  
-    console.log(this.props.IsOutdoor);
-    var classes = ['row todo-list__item', { 'todo-list__item--outdoor': this.props.IsOutdoor }];
+  render() {
+    var classes = ['todo-list__item', { 'todo-list__item--outdoor': this.props.isOutdoor }];
     return (
-      <div className={ classNames(classes) } >
-        <div className="col-xs-4">
-          {this.props.name}
-        </div>
-        <div className="col-xs-4">
-          {this.props.occupation}
-        </div>
-        <div className="col-xs-4">
+      <tr className={classNames(classes)} >
+        <td className="col-xs-4">
+          <label>{this.props.name}</label>
+        </td>
+        <td className="col-xs-4">
+          <label>{this.props.occupation}</label>
+        </td>
+        <td className="col-xs-4">
           <button className="btn btn-default btn-warning">Delete</button>
-        </div>
-      </div>
+        </td>
+      </tr>
     );
   }
 }
 
-export default TodoListContainer;
+module.exports = {
+  todoListContainer: TodoListContainer
+} 

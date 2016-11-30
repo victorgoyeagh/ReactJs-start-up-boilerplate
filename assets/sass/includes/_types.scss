@@ -1,12 +1,29 @@
-.todo-list {
-    &__item {
-        &--outdoor {
-            background: grey;
+
+.todo-container{
+    input[type=text],
+    input.text {
+        width: 100%;
+    }
+    .todo-list {
+        float: left;
+        width: 100%;
+        overflow: hidden;
+        &__item { 
+            label {
+                display: inherit;
+            }
+            td {
+                padding: 5px 20px;
+            }
+            &--outdoor {
+                label {
+                    margin-bottom: 0px;
+                }
+                background: $color-grey--wash-alt;
+            }
         }
     }
 }
-
-
 
 .services {
     min-height: 450px !important;
