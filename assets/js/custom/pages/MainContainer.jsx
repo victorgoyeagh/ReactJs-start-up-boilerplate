@@ -1,8 +1,8 @@
 import React from "react";
-import { navigation as Navigation } from "./Navigation";
-import { headerContainer as HeaderContainer } from "./Header";
+import { headerContainer as HeaderContainer } from "./includes/Header";
+import { navigation as Navigation } from "./includes/Navigation";
+import { footer as Footer } from "./includes/Footer";
 import { main as Main } from "./Main";
-import { footer as Footer } from "./Footer";
 
 export class MainContainer extends React.Component {
     render() {

@@ -8,7 +8,8 @@ export class Forms extends React.Component {
                 <div className="col-xs-12">
                     <section className="section modules">
                         <div className="container">
-                            <h3>Forms Details</h3>
+                            <h2>Forms Details</h2>
+                            <hr />
                             <p>Forms text.</p>
                         </div>
                     </section>

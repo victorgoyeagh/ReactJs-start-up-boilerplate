@@ -8,7 +8,8 @@ export class General extends React.Component {
                 <div className="col-xs-12">
                     <section className="section modules">
                         <div className="container">
-                            <h3>General</h3>
+                            <h2>General</h2>
+                            <hr />
                             <p>General content.</p>
                         </div>
                     </section>

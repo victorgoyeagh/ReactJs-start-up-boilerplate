@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
+import { Link } from "react-router";
 
 export class HeaderContainer extends React.Component {
     render() {
@@ -16,9 +17,9 @@ export class HeaderContainer extends React.Component {
                                         <span className="icon-bar"></span>
                                         <span className="icon-bar"></span>
                                     </button>
-                                    <a className="navbar-brand" href="http://incentive.com">
+                                    <Link className="navbar-brand" to="/">
                                         <img src="/assets/images/default/logo-blk.png" alt="Incentive" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div id="toggleNav" className="navbar-collapse collapse">
                                     {this.props.children}

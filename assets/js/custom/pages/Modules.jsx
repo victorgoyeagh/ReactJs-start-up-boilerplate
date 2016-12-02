@@ -1,18 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { todoListContainer as TodoListContainer } from "../modules/TodoList";
 
 export class Modules extends React.Component {
     render() {
+        //data
+        let items = [
+            {
+                "id": 1,
+                "name": "Victor Goyea",
+                "occupation": "Web Development",
+                "isOutdoor": false
+            },
+            {
+                "id": 2,
+                "name": "Fred Flingstone",
+                "occupation": "Cartoon character",
+                "isOutdoor": true
+            }
+        ]
+
         return (
             <div className="row">
                 <div className="col-xs-12">
                     <section className="section modules">
                         <div className="container">
-                            <h3>Modules</h3>
-                            <p>Modules page.</p>
-                            <div id="todo"></div>
+                            <h2>Modules</h2>
+                            <hr />
+                            <TodoListContainer todoItems={items} header="Todo List" />
                         </div>
-                    </section> 
+                    </section>
                 </div>
             </div>
         )

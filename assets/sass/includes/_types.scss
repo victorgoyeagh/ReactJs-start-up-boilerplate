@@ -1,169 +1,190 @@
+.todo-container {
+  input.text,
+  input[type=text] {
+    width: 100%;
+  }
+  .row:nth-child(2){
+    background-color: $color-reddish-grey--wash;
+    border-radius: 5px;
+    margin: 0px 0px;
+  }
 
-.todo-container{
-    input[type=text],
-    input.text {
-        width: 100%;
-    }
-    .todo-list {
-        float: left;
-        width: 100%;
-        overflow: hidden;
-        &__item { 
-            label {
-                display: inherit;
-            }
-            td {
-                padding: 5px 20px;
-            }
-            &--outdoor {
-                label {
-                    margin-bottom: 0px;
-                }
-                background: $color-grey--wash-alt;
-            }
+  .todo-list {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+
+    &__item {
+      label {
+        display: inherit;
+      }
+
+      td {
+        padding: 5px 20px;
+      }
+
+      &--outdoor {
+        label {
+          margin-bottom: 0;
         }
+        background: $color-grey--wash-alt;
+      }
     }
-}
-
-.services {
-    min-height: 450px !important;
-    text-align: center;
+  }
 }
 
 .social-links {
-    margin: 0px 0px 20px;
-    padding: 0px;
-    list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+
+  &__item {
+    color: grey;
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+    margin-right: 10px;
     display: inline-block;
-    &__item {
-        color: grey;
-        width: 30px;
-        height: 30px;
-        display: block;
-        position: relative;
-        margin-right: 10px;
-        display: inline-block;
-        &:last-child {
-            margin-right: 0px;
-        }
-        a {
-            padding: 5px 0px 0px 8px;
-            @include radius(100%);
-            display: block;
-            width: 100%;
-            height: 100%;
-            float: left;
-            background: white;
-            i {
-                color: $color--grey;
-            }
-        }
+
+    &:last-child {
+      margin-right: 0;
     }
+
+    a {
+      padding: 5px 0 0 8px;
+      @include radius(100%);
+      display: block;
+      width: 100%;
+      height: 100%;
+      float: left;
+      background: white;
+
+      i {
+        color: $color--grey;
+      }
+    }
+  }
 }
 
 $permit-height: 400px;
+
 .intro {
-    background-color: #e4e4e4;
-    min-height: 200px !important;
-    &__snippet {
-        position: relative;
-        padding: 0px 10%;
-        text-align: center;
-        &__icon {
-            display: none;
-            position: absolute;
-            left: -20px;
-            top: 20%;
-            padding: 0px 10px;
-            @include font-size(8);
-        }
-        h2 {
-            text-transform: capitalize;
-        }
+  background-color: #e4e4e4;
+  min-height: 200px !important;
+
+  &__snippet {
+    position: relative;
+    padding: 0 10%;
+    text-align: center;
+
+    &__icon {
+      display: none;
+      position: absolute;
+      left: -20px;
+      top: 20%;
+      padding: 0 10px;
+      @include font-size(8);
     }
+
+    h2 {
+      text-transform: capitalize;
+    }
+  }
 }
 
 .banner {
-    float: left;
-    clear: both;
-    min-height: 460px;
-    display: block;
-    width: 100%;
-    position: relative;
-    z-index: 0;
-    background-repeat: no-repeat;
+  float: left;
+  clear: both;
+  min-height: 460px;
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 43% 40px;
+  @media (min-width: $screen-sm) {
     background-attachment: fixed;
-    background-size: cover;
-    background-position: 43% 40px;
+    background-position: center;
+  }
+  background-color: black;
+
+  h1,
+  h2 {
+    color: $color--white;
+    text-align: center;
+  }
+
+  h1 {
+    margin: 60px 0 0;
+    @include font-size(3);
+    font-weight: bold;
     @media (min-width: $screen-sm) {
-        background-attachment: fixed;
-        background-position: center;
+       @include font-size(4);
     }
-    background-color: black;
-    h1,
-    h2 {
-        color: $color--white;
-        text-align: center;
+  }
+
+  h2 {
+    @include font-size(2);
+    @media (min-width: $screen-sm) {
+       @include font-size(3);
     }
-    h1 {
-        margin: 60px 0px 0px;
-        @include font-size(3);
-        font-weight: bold;
+    @include opacity(0.8);
+  }
+
+  .video-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    .video {
+      position: absolute;
+
+      video {
+        left: -200px;
+        width: 1000px;
         @media (min-width: $screen-sm) {
-            @include font-size(4);
+          left: 0;
+          width: 980px;
         }
+        @media (min-width: $screen-md) {
+          width: 100%;
+        }
+      }
     }
-    h2 {
-        @include font-size(2);
-        @media (min-width: $screen-sm) {
-            @include font-size(3);
-        }
-        @include opacity(0.8);
+  }
+
+  .header-cont {
+    margin: 50px auto 36px;
+    display: table;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 5%;
+    height: 100%;
+    width: 100%;
+    @media (min-width: $screen-sm) {
+      width: 80%;
     }
-    .video-container {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        .video {
-            position: absolute;
-            video {
-                left: -200px;
-                width: 1000px;
-                @media (min-width: $screen-sm) {
-                    left: 0px;
-                    width: 980px;
-                }
-                @media (min-width: $screen-md) {
-                    width: 100%;
-                }
-            }
-        }
+
+    &__inner {
+      display: table-cell;
+      vertical-align: middle;
     }
-    .header-cont {
-        margin: 50px auto 36px auto;
-        display: table;
-        text-align: center;
-        position: relative;
-        margin: 0 auto;
-        padding: 0 5% 0;
-        height: 100%;
-        width: 100%;
-        @media (min-width: $screen-sm) {
-            width: 80%;
-        }
-        &__inner {
-            display: table-cell;
-            vertical-align: middle;
-        }
+  }
+
+  .button-cont {
+    text-align: center;
+    margin-top: 40px;
+    display: inline-block;
+
+    button {
+      margin-left: 5px;
+      margin-right: 5px;
+      padding: 10px 16px 10px 6px;
     }
-    .button-cont {
-        text-align: center;
-        margin-top: 40px;
-        display: inline-block;
-        button {
-            margin-left: 5px;
-            margin-right: 5px;
-            padding: 10px 16px 10px 6px;
-        }
-    }
+  }
 }

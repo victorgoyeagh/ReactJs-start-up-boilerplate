@@ -5,12 +5,18 @@ var classNames = require('classnames');
 export class TodoListContainer extends React.Component {
   render() {
     return (
-      <div className="row todo-container">
-        <div className="col-xs-12 col-sm-12 col-md-12">
-          <p>{this.state}</p>
-          <h1>{this.props.header}</h1>
-          <AddItem />
-          <TodoList todoItems={this.props.todoItems} />
+      <div className="todo-container">
+        <div className="row">
+          <div className="col-xs-12">
+            <h3>{this.props.header}</h3>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-xs-12 col-sm-12 col-md-12">
+            <p>{this.state}</p>
+            <AddItem />
+            <TodoList todoItems={this.props.todoItems} />
+          </div>
         </div>
       </div>
     )
@@ -28,7 +34,7 @@ class AddItem extends React.Component {
           <input className="form-control" type="text" name="newOccupation" placeholder="Enter occupation" title="Item Occupation" value="" />
         </div>
         <div className="col-xs-4">
-          <button className="form-control" name="btnAddNewItem" className="btn btn-default">Add new item</button>
+          <button className="form-control" name="btnAddNewItem" className="btn btn-default icon btn-success"><i className="fa fa-plus" aria-hidden="true"></i>Add new item</button>
         </div>
       </div>
     )
@@ -47,10 +53,10 @@ class TodoList extends React.Component {
         <thead>
           <tr>
             <th className="col-xs-4">
-              <h3>Fullname</h3>
+              <h4>Fullname</h4>
             </th>
             <th className="col-xs-4">
-              <h3>Occupation</h3>
+              <h4>Occupation</h4>
             </th>
             <td className="col-xs-4">
             </td>
@@ -76,7 +82,7 @@ class TodoItem extends React.Component {
           <label>{this.props.occupation}</label>
         </td>
         <td className="col-xs-4">
-          <button className="btn btn-default btn-warning">Delete</button>
+          <button className="btn btn-default icon btn-warning"><i className="fa fa-times" aria-hidden="true"></i>Delete</button>
         </td>
       </tr>
     );
