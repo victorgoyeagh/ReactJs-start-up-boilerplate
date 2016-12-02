@@ -2,13 +2,6 @@ import { scrollTo as ScrollTo } from "./modules/ScrollCtrl";
 import { menuCtrl as MenuCtrl } from "./modules/MenuCtrl";
 import { todoListContainer as TodoListContainer } from "./modules/React";
 
-//scroll to top button
-new ScrollTo("js-scrollTop", 0);
-
-//responsive bootstrap menu
-new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
-
-
 //data
 let items = [
     {
@@ -16,7 +9,7 @@ let items = [
         "name": "Victor Goyea",
         "occupation": "Web Development",
         "isOutdoor": false
-    },    
+    },
     {
         "id": 2,
         "name": "Fred Flingstone",
@@ -30,14 +23,29 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 import { Link } from "react-router";
+ 
+import { main as Main } from "./pages/Main"; 
+import { general as General } from "./pages/General";
+import { modules as Modules } from "./pages/Modules";
+import { forms as Forms } from "./pages/Forms";
+import { mainContainer as MainContainer } from "./pages/MainContainer";
 
-import {layout as Layout} from "./pages/layout"; 
-import {main as Main} from "./pages/main";
-import {about as About} from "./pages/about";
-import {contact as Contact} from "./pages/contact";
-import {services as Services} from "./pages/services";
 
-ReactDOM.render (
+ReactDOM.render(
+    <Router history={hashHistory}>
+        <Route path="/" component={MainContainer}>
+            <IndexRoute component={Main} />
+            <Route path="general" component={General} />
+            <Route path="modules" component={Modules} />
+            <Route path="forms" component={Forms} />
+        </Route>
+    </Router>,
+    document.getElementById("main")
+);
+
+
+/*
+ReactDOM.render(
     <Router history={hashHistory}>
         <Route path="/" component={Layout}>
             <IndexRoute component={Main} />
@@ -45,7 +53,12 @@ ReactDOM.render (
             <Route path="contact" component={Contact} />
             <Route path="services" component={Services} />
         </Route>
-    </Router>, 
+    </Router>,
     document.getElementById("todo")
-);
-    
+);*/
+
+//attach scroll to top button
+new ScrollTo("js-scrollTop", 0);
+
+//responsive bootstrap menu
+new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);

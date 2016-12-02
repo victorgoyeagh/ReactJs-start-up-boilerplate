@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 var classNames = require('classnames');
 
 export class TodoListContainer extends React.Component {
-
   render() {
     return (
       <div className="row todo-container">
