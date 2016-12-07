@@ -119,6 +119,7 @@ module.exports = function(grunt) {
     grunt.registerTask("default", ["webpack", "uglify", "sass", "cssmin", "copy", "clean", "watch"]);
     grunt.registerTask("dist", ["webpack", "uglify", "sass", "cssmin", "copy", "clean", "watch"]);
 
+    grunt.registerTask("js", ["webpack", "uglify", "watch:js"]);
     grunt.registerTask("css", ['sass', 'cssmin', "watch:css"]);
     grunt.registerTask("tupac", ["webpack"]);
 }

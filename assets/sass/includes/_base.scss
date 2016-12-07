@@ -70,6 +70,7 @@ button.btn {
 }
 
 table {
+  width: 100%;
   color: grey;
 
   tfoot,
@@ -81,6 +82,11 @@ table {
   th {
     display: inline-grid;
   }
+
+  & + & {
+    margin-bottom:10px;
+  }
+
 }
 
 img {
@@ -91,6 +97,8 @@ img {
 
 hr {
   width: 100%;
+  display: inline-block;
+  clear: both;
 }
 
 label {

@@ -1,7 +1,6 @@
 import { scrollTo as ScrollTo } from "./modules/ScrollCtrl";
 import { menuCtrl as MenuCtrl } from "./modules/MenuCtrl";
 
-
 //react
 import React from "react";
 import ReactDOM from "react-dom";

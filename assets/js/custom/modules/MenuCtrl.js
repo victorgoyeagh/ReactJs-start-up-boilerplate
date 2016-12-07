@@ -22,11 +22,11 @@ export class MenuCtrl {
         }
 
         if (fixNav) {
-            this.ControlNavigationDiaplay();
+            this.ControlNavigationDisplay();
         }
     }
 
-    ControlNavigationDiaplay = () => {
+    ControlNavigationDisplay = () => {
         let currPosition = window.scrollY;
         window.addEventListener("scroll", function () {
             let scrollPos = window.scrollY;
@@ -38,10 +38,8 @@ export class MenuCtrl {
             if (scrollPos < currPosition) {
                 navStyle.position = "fixed";
                 navStyle.top = "0px";
-                console.debug("scrolling upwards");
             } else { 
                 navStyle.top = "-80px"; 
-                console.debug("scrolling downwards");
             }
             currPosition = scrollPos;
         });

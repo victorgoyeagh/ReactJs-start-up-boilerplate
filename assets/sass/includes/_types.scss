@@ -2,18 +2,18 @@
   input.text,
   input[type=text] {
     width: 100%;
-  }
-  .row:nth-child(2){
+  } 
+
+  .todo-list {
     background-color: $color-reddish-grey--wash;
     border-radius: 5px;
     margin: 0px 0px;
-  }
-
-  .todo-list {
     float: left;
     width: 100%;
     overflow: hidden;
-
+    &__head {
+      
+    }
     &__item {
       label {
         display: inherit;
@@ -97,7 +97,7 @@ $permit-height: 400px;
 .banner {
   float: left;
   clear: both;
-  min-height: 460px;
+  min-height: 560px;
   display: block;
   width: 100%;
   position: relative;

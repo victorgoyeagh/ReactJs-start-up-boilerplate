@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 export class Main extends React.Component {
     render() {
         var bannerStyle = {
-            backgroundImage: "url('/assets/images/default/main4.jpg')"
+            backgroundImage: "url('/assets/images/default/indexhead.jpg')"
         }
         return (
 
