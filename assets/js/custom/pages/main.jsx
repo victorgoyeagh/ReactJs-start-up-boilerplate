@@ -6,20 +6,23 @@ export class Main extends React.Component {
         var bannerStyle = {
             backgroundImage: "url('/assets/images/default/indexhead.jpg')"
         }
+        var featuresStyle = {
+            backgroundImage: "url('/assets/images/default/bg-features.jpg')"
+        }
         return (
 
             <div className="row">
                 <div className="col-xs-12">
-                    <section className="banner" style={bannerStyle}>
-
+                    <section className="banner">
                         <div className="video-container">
                             {/*
-                                <div className="video">
-                                    <video id="video--office" width="100%" height="100%" autoplay loop>
-									                      <source src="/assets/video/office.mp4" type="video/mp4"> Your browser does not support the video tag.
-								                    </video>
-                                </div>
-                                */}
+                            <div className="video">
+                                <video id="video--office" width="100%" height="100%" autoplay loop>
+                                    <source src="/assets/video/office.mp4" type="video/mp4"> 
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            */}
                             <div className="header-cont">
                                 <div className="header-cont__inner">
                                     <hgroup>
@@ -28,16 +31,28 @@ export class Main extends React.Component {
                                     </hgroup>
                                     <div className="button-cont">
                                         <button className="btn btn-default btn-info">
-                                            <i className="fa fa-angle-right"></i>Take a tour
+                                            {/*<i className="fa fa-angle-right"></i>*/}
+                                            Take a tour
                                     </button>
                                         <button className="btn btn-default btn-warning">
-                                            <i className="fa fa-angle-right"></i>Watch Video
+                                            {/*<i className="fa fa-angle-right"></i>*/}
+                                            Watch Video
                                     </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </section>
+                    <section className="section features" style={featuresStyle}>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-xs-12 col-sm-6 col-md-6">
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    {/*
                     <section className="section intro">
                         <div className="container">
                             <div className="row">
@@ -80,6 +95,7 @@ export class Main extends React.Component {
                             </div>
                         </div>
                     </section>
+                    */}
                     <section className="section services">
                         <div className="container">
                         </div>

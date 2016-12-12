@@ -41,6 +41,7 @@
     "history": "^4.4.1",
     "jquery": "^3.1.1",
     "jqueryui": "^1.11.1",
+    "loadash": "0.0.1",
     "react": "^15.4.0",
     "react-core": "0.0.0",
     "react-dom": "^15.4.0",

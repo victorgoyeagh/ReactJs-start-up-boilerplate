@@ -1,121 +1,171 @@
-    /** bootstrap override **/
-        
-        .navbar {
-            margin: 0px;
-            border: none;
-            z-index: 999;
-            
-            .navbar-collapse {
-                @media (max-width: $screen-sm-min) {
-                    display: block;
-                    position: absolute;
-                    top: 0px;
-                    left: 100%;
-                    width: 100%;
-                    z-index: 999;
-                    margin: auto;
-                    background-color: $color--black;
-                    @include transition(left, ease-out, 0.2s);
-                    .open {
-                        left: 0px;
-                    }
-                }
-                .navbar-nav {
-                    @media (max-width: $screen-sm) {
-                        width: 90%;
-                    }
-                    position: initial;
-                    li.dropdown:hover>ul.dropdown-menu,
-                    li.dropdown:hover>div.dropdown-menu {
-                        @media (min-width: $screen-sm) {
-                            //display: block;
-                            @include show-object;
-                        }
-                    }
-                    li {
-                        a {
-                            @media (min-width: $screen-sm) {
-                                padding-top: 30px;
-                                padding-bottom: 30px;
-                            }
-                        }
-                        &.dropdown {
-                            ul.dropdown-menu,
-                            div.dropdown-menu { 
-                                @media (min-width: $screen-sm) {
-                                    width: auto;
-                                    @include hide-object();
-                                    display: block;
-                                }
-                                width: 100%;
-                                @include transition(all, ease-in, 0.2);
-                                content: '';
-                                position: absolute;
-                                @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
-                                border-radius: 0px; 
-                                @include transition(all, ease-in, 0.2s);
+/** bootstrap override **/
 
-                                a {
-                                    padding-top: 15px;
-                                    padding-bottom: 15px;
-                                }
-                            }
-                        }
-                        div.dropdown-menu {
-                            .dropdown-cont {
-                                padding: 0px 20px 10px;
-                            }
-                        }
-                    }
-                }
-                li.dropdown.dropdown--fullwidth {
-                    position: initial;
+.navbar {
+  margin: 0;
+  border: none;
+  z-index: 999;
 
-                    ul.dropdown-menu,
-                    div.dropdown-menu { 
-                        position: initial;
-                        @media (min-width: $screen-sm) {
-                            position: absolute;
-                        }
-                        width: 100%;
-                    }
-                }
-            } 
-        
-        .navbar-header {
-            margin-right: 0px;
-            margin-left: 0px;
-            left: 0px;
-            position: absolute;
-            top: 0px;
-            width: 100%;
-            //@media (min-width: $screen-sm) {
-            @include transition(all, ease-out, 0.2s);
-            //}
-            @media (min-width: $screen-sm) {
-                left: 0 !important;
-            }
-            .navbar-toggle {
-                padding: 8px 8px;
-                margin-top: 9px;
-                background: $color--black;
-                &.collapsed {}
-                .icon-bar {
-                    background: white;
-                }
-            }
-            .navbar-brand {
-                max-width: 150px;
-                width: auto;
-                display: inline-block;
-                position: relative;
-                @media (min-width: $screen-sm) {
-                    margin: 14px 0px 12px -15px;
-                    //margin: 12px 26px
-                }
-                img {
-                    @include responsive-image;
-                }
-            }
+  .navbar-collapse {
+    background-color: $color--white;
+    @media (max-width: $screen-sm-min) {
+      background-color: $color--black;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      z-index: 999;
+      margin: auto;
+      @include transition(left, ease-out, 0.2s);
+
+      .open {
+        left: 0;
+
+        .dropdown-toggle {
+          &:hover {
+            color: $color--black;
+          }
         }
+
+        ul.dropdown-menu {
+          li.dropdown-header {
+            padding: 5px 15px 5px 20px;
+          }
+        }
+
+        a {
+          color: $color--white;
+
+          &.hover {
+            background-color: #737272;
+            border-color: $color--black;
+          }
+        }
+      }
     }
+
+    .navbar-nav {
+      @media (max-width: $screen-sm) {
+        width: 90%;
+      }
+      position: initial;
+
+      li.dropdown:hover > div.dropdown-menu,
+      li.dropdown:hover > ul.dropdown-menu {
+        @media (min-width: $screen-sm) {
+           @include show-object;
+        }
+      }
+
+      li {
+        a {
+          color: $color--white;
+          padding: 20px;
+          @media (min-width: $screen-sm) {
+            color: $color--black;
+          }
+
+          &[aria-expanded="true"] {
+            color: $color--black;
+          }
+          @include font-size(1.5);
+          @media (min-width: $screen-sm) {
+            padding-top: 30px;
+            padding-bottom: 30px;
+          }
+        }
+
+        &.dropdown {
+          div.dropdown-menu,
+          ul.dropdown-menu {
+            li {
+              a {
+                &:hover {
+                  color: $color--black;
+                }
+              }
+            }
+            padding: 0;
+            @media (min-width: $screen-sm) {
+              width: auto;
+              @include hide-object();
+              display: block;
+              position: absolute;
+            }
+            width: 100%;
+            @include transition(all, ease-in, 0.2);
+            content: '';
+            @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
+            border-radius: 0;
+            @include transition(all, ease-in, 0.2s);
+
+            a {
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
+          }
+        }
+
+        div.dropdown-menu {
+          .dropdown-cont {
+            padding: 0 20px 10px;
+          }
+        }
+      }
+    }
+
+    li.dropdown.dropdown--fullwidth {
+      position: initial;
+
+      div.dropdown-menu,
+      ul.dropdown-menu {
+        position: initial;
+        @media (min-width: $screen-sm) {
+          position: absolute;
+        }
+        width: 100%;
+      }
+    }
+  }
+
+  .navbar-header {
+    margin-right: 0;
+    margin-left: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    @include transition(all, ease-out, 0.2s);
+    @media (min-width: $screen-sm) {
+      left: 0 !important;
+    }
+
+    .navbar-toggle {
+      padding: 8px;
+      margin-top: 9px;
+      background: $color--black;
+      border-radius: 0;
+
+      &.collapsed {}
+
+      .icon-bar {
+        background: white;
+      }
+    }
+
+    .navbar-brand {
+      max-width: 150px;
+      width: auto;
+      display: inline-block;
+      position: relative;
+      @media (min-width: $screen-sm) {
+        margin: 14px 0 12px -15px;
+        //margin: 12px 26px
+      }
+
+      img {
+        @include responsive-image;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 body {
   background: transparent;
-  font-family: opensans_light;
+  font-family: Lato;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -10,29 +10,28 @@ h3,
 h4,
 h5,
 h6 {
-  //font-family: opensans_light;
+  font-weight: normal;
+  font-family: Lato;
   @media (min-width: $screen-sm) {}
 }
 
 h1 {
+  
   @media (min-width: $screen-sm) {}
 }
 
-h2,
-h3 {
-  /* background: grey;
-    padding: 5px;
-    width: auto;
-    border-radius: 5px;
-    color: white;
-    display: inline-block;
-    */
+h2 {
+  @include font-size(2.4);
+  @media (min-width: $screen-sm) {
+    font-size: 30px;
+  }     
 }
 
 input,
 label,
 p {
   display: block;
+  font-weight: normal;
 }
 
 a {
@@ -49,15 +48,17 @@ a:hover {
   text-decoration: none;
 }
 
+p,
 ol,
 ul {
   li {
+        font-family: Lato;
     color: grey;
   }
 }
 
 button.btn {
-  @include radius(3px);
+  @include radius(0px);
   text-transform: capitalize;
 
   i:before {
@@ -65,7 +66,10 @@ button.btn {
   }
 
   &.icon {
-    padding: 6px 12px 6px 0;
+    padding: 6px 12px 6px 0px;
+    .icon+.icon {
+      margin-left: 20px;
+    }
   }
 }
 
