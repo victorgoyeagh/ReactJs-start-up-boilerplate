@@ -78,15 +78,6 @@ body {
   }
 }
 
-.scrollTop {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  z-index: 9999;
-  display: block;
-  @include transition(visibility, ease-out, 0.5s);
-}
-
 .footer {
   padding: 30px 0;
   position: relative;

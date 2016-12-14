@@ -1,18 +1,29 @@
-.todo-container {
+.scrollTop {
+  margin: auto;
+  position: fixed;
+  bottom: -1px;
+  right: 10px;
+  z-index: 9999;
+  display: block;
+  @include transition(visibility, ease-out, 0.5s);
+}
+
+.btn-incentive {
+  border-radius: 0px;
+}
+
+.contact-container {
   input.text,
   input[type=text] {
     width: 100%;
   }
 
-  .todo-list {
+  .contact-list {
     background-color: $color-reddish-grey--wash;
-    border-radius: 5px;
     margin: 0;
     float: left;
     width: 100%;
     overflow: hidden;
-
-    &__head {}
 
     &__item {
       label {
@@ -207,8 +218,8 @@ $permit-height: 400px;
 
   .button-cont {
     text-align: center;
-    margin: 0px;
-    @media (min-width: $screen-sm) { 
+    margin: 0;
+    @media (min-width: $screen-sm) {
       margin: 40px;
     }
     display: inline-block;

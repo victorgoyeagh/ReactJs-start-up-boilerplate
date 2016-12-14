@@ -1,23 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { todoListContainer as TodoListContainer } from "../modules/TodoList";
+import ReactDOM from 'react-dom'; 
+import { contactListApp as ContactListApp } from "../modules/ContactList";
 
 export class Modules extends React.Component {
     render() {
         //data
-        let items = [
+        let contacts = [
             {
-                "id": 1,
-                "name": "Victor Goyea",
-                "occupation": "Web Development",
-                "isOutdoor": false
+                "_id": 1,
+                "name": "Victor",
+                "occupation": "Web Developer",
+                "email": "victorgoyea@hotmail.com",
+                "telephone": "07876572919"
             },
             {
-                "id": 2,
-                "name": "Fred Flingstone",
-                "occupation": "Cartoon character",
-                "isOutdoor": true
-            }
+                "_id": 3,
+                "name": "Fred",
+                "occupation": "Web Designer",
+                "email": "fredwilson@gmail.com",
+                "telephone": "07123456789"
+            } 
         ]
 
         return (
@@ -27,7 +29,7 @@ export class Modules extends React.Component {
                         <div className="container">
                             <h2>Modules</h2>
                             <hr />
-                            <TodoListContainer todoItems={items} header="Todo List" />
+                            <ContactListApp data={contacts} />
                         </div>
                     </section>
                 </div>

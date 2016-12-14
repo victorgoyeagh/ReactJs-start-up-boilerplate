@@ -1,8 +1,8 @@
 import React from "react";
-import ReactDOM from "react-dom";  
+import ReactDOM from "react-dom";
 import { Link } from "react-router";
 
-export class Navigation extends React.Component { 
+export class Navigation extends React.Component {
     render() {
         return (
             <ul className="nav navbar-nav navbar-right">
@@ -24,15 +24,30 @@ export class Navigation extends React.Component {
                     <Link to="forms" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Forms<span className="caret"></span></Link>
                     <div className="dropdown-menu" role="menu">
                         <div className="dropdown-cont">
-                            <h3>Forms</h3>
-                            <p><Link to="forms">Form One</Link>Donec aliquet enim id lorem faucibus consequat. Vivamus iaculis tortor lobortis
-                            tellus pharetra efficitur. Metus eu tempor condimentum, leo
-                            tortor efficitur magna, quis feugiat purus lorem nec libero. Nulla sodales
-                            egestas elit in aliquam.</p>
+                            <div className="row">
+                                <ul className="list-unstyled col-xs-12 col-sm-6 col-md-4">
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                </ul>
+                                <ul className="list-unstyled col-xs-12 col-sm-6 col-md-4">
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                </ul>
+                                <ul className="list-unstyled col-xs-12 col-sm-6 col-md-4">
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                    <li><Link to="forms">Form One</Link></li>
+                                </ul>
+                            </div>
+
                         </div>
                     </div>
                 </li>
-                
             </ul>
         )
     }

@@ -32,8 +32,8 @@ export class Main extends React.Component {
                                     <div className="button-cont">
                                         <button className="btn btn-default btn-info">
                                             {/*<i className="fa fa-angle-right"></i>*/}
-                                            Take a tour
-                                    </button>
+                                            Our Work
+                                        </button>
                                         <button className="btn btn-default btn-warning">
                                             {/*<i className="fa fa-angle-right"></i>*/}
                                             Watch Video

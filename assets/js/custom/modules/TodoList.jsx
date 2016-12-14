@@ -6,55 +6,48 @@ var classNames = require('classnames');
 export class TodoListContainer extends React.Component {
   constructor(props) {
     super(props);
+    this.totalNoOfItemsAllowed = 1000;
     this.state = {
       data: this.props.todoItems
     }
   }
-  addItem(e) {
-    const tmpItems = this.state.data;
-    tmpItems.push({
-      "id": 200,
-      "name": "David Livingstone",
-      "occupation": "Politician",
-      "isOutdoor": false
-    });
-    this.setState({ data: tmpItems });
-    e.preventDefault();
+  getInitialState(){
+    return { data: this.props.todoItems }
   }
-  removeItem(id) {
+  removeItem(itemId) {
     const tmpItems = this.state.data;
-    var remainder = tmpItems.filter(el, function (item) {
-      return !(item.id == id);
+    var remainderItems = tmpItems.filter(function(item){ 
+      return item.id !== itemId 
     });
-    this.setState({ data: remainder });
-    e.preventDefault();
+    this.setState({ data: remainderItems });
+  }
+  addItem(newItem) {
+    const tmpItems = this.state.data;
+    tmpItems.push(newItem);
+    this.setState({ 
+      data: tmpItems 
+    });
   }
   render() {
     return (
       <div className="todo-container">
-        <div className="row">
+        <div className="row"> 
           <div className="col-xs-12">
             <h3>{this.props.header}</h3>
           </div>
         </div>
-        <TodoAdd todoAdd={this.addItem.bind(this)} />
-        <TodoList todoItems={this.state.data} removeItem={this.removeItem.bind(this)} />
+        <TodoAddForm todoAddItem={this.addItem} />
+        <TodoList todoItems={this.state.data} removeTodoItem={this.removeItem} />
       </div>
     )
   }
 }
 
 class TodoItem extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      editing: false
-    }
-  }
-  onEditClick(){
-    this.setState({
-      editing : true
-    })
+  handleRemoveItem(e){
+    var emitItem = this.refs.itemKey.value;
+    console.log(emitItem)
+    this.props.removeTodoItem(emitItem);
   }
   render() {
     var classes = ['todo-list__item', { 'todo-list__item--outdoor': this.props.isOutdoor }];
@@ -68,19 +61,55 @@ class TodoItem extends React.Component {
         </td>
         <td className="col-sm-3">
           <label>{(this.props.isOutdoor) ? 'outdoor' : 'indoor'}</label>
+          <input type="hidden" ref="itemKey" value={this.props.todoItem} />
         </td>
         <td className="col-sm-3">
-          <button className="btn btn-default icon btn-warning">
+          <button className="btn btn-default icon btn-warning" onClick={this.handleRemoveItem.bind(this)}>
             <i className="fa fa-times" aria-hidden="true"></i>
             Delete
           </button>
           <button className="btn btn-default icon btn-warning">
-            <i className="fa fa-times" aria-hidden="true"></i>
+            <i className="fa fa-pencil" aria-hidden="true"></i>
             Edit
           </button>
         </td>
       </tr>
     );
+  }
+}
+
+class TodoAddForm extends React.Component {
+  handleSubmit(ev){
+    ev.preventDefault(); 
+    const newItem = {
+      "id": ((Math.random(this.totalNoOfItemsAllowed) * 10) + 1),
+      "name": this.refs.newItemName.value,
+      "occupation": this.refs.newItemOccupation.value,
+      "isOutdoor": (this.refs.newItemIndoor.checked) ? true : false 
+    }
+    this.props.todoAddItem(newItem);
+  }
+  render(){
+    return(
+       <div className="row">
+          <form id="addTodoForm" onSubmit={this.handleSubmit}>
+            <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <input required type="text" className="form-control" name="newItemName" ref="newItemName" />
+            </div>
+            <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <input required type="text" className="form-control" name="newItemOccupation" ref="newItemOccupation" />
+            </div>
+            <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+              <div className="checkbox">
+                <input type="checkbox" id="newItemIndoor" name="newItemIndoor" ref="newItemIndoor" />
+              </div>
+            </div> 
+            <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+              <input value="Add new item" type="submit" onClick={this.handleSubmit.bind(this)} className="btn btn-default icon btn-success" /> 
+            </div>
+          </form>
+        </div>
+    )
   }
 }
 
@@ -124,31 +153,7 @@ class TodoList extends React.Component {
   }
 }
 
-class TodoAdd extends React.Component {
-  render() {
-    return (
-      <div className="row">
-        <form>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <input className="form-control" type="text" name="newItemName" placeholder="Enter name" title="Item Name" value="" />
-          </div>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <input className="form-control" type="text" name="newOccupation" placeholder="Enter occupation" title="Item Occupation" value="" />
-          </div>
-          <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-            <input className="form-control" type="check" name="newIndoor" placeholder="Enter indoor" title="Item Indoor" value="" />
-          </div>
-          <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-            <button type="submit" onClick={this.props.todoAdd.bind(this)} name="submit" className="btn btn-default icon btn-success">
-              <i className="fa fa-plus" aria-hidden="true"></i>
-                Add new item
-            </button>
-          </div>
-        </form>
-      </div>
-    )
-  }
-}
+
 
 module.exports = {
   todoListContainer: TodoListContainer
