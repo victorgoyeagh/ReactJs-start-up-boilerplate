@@ -7,14 +7,14 @@ export class Modules extends React.Component {
         //data
         let contacts = [
             {
-                "_id": 1,
+                "id": 1,
                 "name": "Victor",
                 "occupation": "Web Developer",
                 "email": "victorgoyea@hotmail.com",
                 "telephone": "07876572919"
             },
             {
-                "_id": 3,
+                "id": 3,
                 "name": "Fred",
                 "occupation": "Web Designer",
                 "email": "fredwilson@gmail.com",

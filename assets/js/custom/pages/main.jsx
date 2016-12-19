@@ -7,7 +7,7 @@ export class Main extends React.Component {
             backgroundImage: "url('/assets/images/default/indexhead.jpg')"
         }
         var featuresStyle = {
-            backgroundImage: "url('/assets/images/default/bg-features.jpg')"
+            backgroundImage: "url('/assets/images/default/agencies.jpg')"
         }
         return (
 
@@ -44,16 +44,6 @@ export class Main extends React.Component {
                         </div>
                     </section>
                     <section className="section features" style={featuresStyle}>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-xs-12 col-sm-6 col-md-6">
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    {/*
-                    <section className="section intro">
                         <div className="container">
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6 col-md-4">
@@ -95,7 +85,6 @@ export class Main extends React.Component {
                             </div>
                         </div>
                     </section>
-                    */}
                     <section className="section services">
                         <div className="container">
                         </div>

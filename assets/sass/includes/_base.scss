@@ -1,4 +1,5 @@
 //defaults
+
 body {
   background: transparent;
   font-family: Lato;
@@ -34,6 +35,9 @@ h3 {
   float: left;
   padding-bottom: 10px;
   clear: both;
+  i {
+    margin-right: 10px;
+  }
 }
 
 input,
@@ -44,6 +48,8 @@ p {
 }
 
 form {
+  width: 100%;
+  float: left;
   clear: both;
   margin: 20px 0;
 
@@ -51,6 +57,10 @@ form {
     width: 100%;
     border-radius: 0;
   }
+}
+
+.form-control {
+  border-radius: 0;
 }
 
 a {
@@ -185,5 +195,3 @@ summary {
   float: left;
   width: 100%;
 }
-
-

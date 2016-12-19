@@ -21,9 +21,11 @@ export class MainContainer extends React.Component {
                         </div>
                     </main>
                     <Footer />
-                    <button id="js-scrollTop" className="btn btn-default btn-success scrollTop">
-                        <i className="fa fa-arrow-up"></i>
-                    </button>
+                    <div className="scrollTop--cont">
+                        <button id="js-scrollTop" className="btn btn-default btn-success scrollTop">
+                            <i className="fa fa-arrow-up"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
         )
