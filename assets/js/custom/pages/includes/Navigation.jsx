@@ -11,7 +11,7 @@ export class Navigation extends React.Component {
                 <li className="dropdown">
                     <Link to="modules" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Modules <span className="caret"></span></Link>
                     <ul className="dropdown-menu" role="menu">
-                        <li><Link to="modules">Module One</Link></li>
+                        <li><Link to="/modules/contactlist">Contact List</Link></li>
                         <li><Link to="modules">Module Two</Link></li>
                         <li><Link to="modules">Module Three</Link></li>
                         <li className="divider"></li>
@@ -44,7 +44,6 @@ export class Navigation extends React.Component {
                                     <li><Link to="forms">Form One</Link></li>
                                 </ul>
                             </div>
-
                         </div>
                     </div>
                 </li>

@@ -9,9 +9,11 @@ import { Link } from "react-router";
  
 import { main as Main } from "./pages/Main"; 
 import { general as General } from "./pages/General";
-import { modules as Modules } from "./pages/Modules";
+import { modules as Modules } from "./pages/ModulesContainer";
 import { forms as Forms } from "./pages/Forms";
 import { mainContainer as MainContainer } from "./pages/MainContainer";
+import { modulesHome as ModulesHome } from "./pages/ModulesHome";
+import { contactList as ContactList } from "./pages/ContactList";
 
 //site routes
 ReactDOM.render(
@@ -19,7 +21,10 @@ ReactDOM.render(
         <Route path="/" component={MainContainer}>
             <IndexRoute component={Main} />
             <Route path="general" component={General} />
-            <Route path="modules" component={Modules} />
+            <Route path="modules" component={Modules}>
+                <IndexRoute component={ModulesHome} />
+                <Route path="contactlist" component={ContactList} />
+            </Route>
             <Route path="forms" component={Forms} />
         </Route>
     </Router>,

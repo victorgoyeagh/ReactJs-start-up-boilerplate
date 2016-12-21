@@ -132,10 +132,10 @@ class ContactListPanel extends React.Component {
     }
 }
 
-ContactListPanel.propTypes, 
-ContactsListApp.propTypes = {
-    data : React.PropTypes.array.isRequired
-}
+ContactListPanel.propTypes,
+    ContactsListApp.propTypes = {
+        data: React.PropTypes.array.isRequired
+    }
 
 
 class ContactItem extends React.Component {
@@ -200,7 +200,7 @@ class ContactItem extends React.Component {
             inputValues: this.initialInputStates()
         });
     }
-    handleChange(event) {
+    handleChange(e) {
         this.setState({
             editMode: true,
             inputValues: {
@@ -217,9 +217,9 @@ class ContactItem extends React.Component {
         var styles = {
             showEditDisplay: {
                 "display": this.state.editMode ? 'block' : 'none'
-            }, 
-            hideEditDisplay: { 
-                "display" : !this.state.editMode ? 'block' : 'none'
+            },
+            hideEditDisplay: {
+                "display": !this.state.editMode ? 'block' : 'none'
             }
         }
         return (
@@ -312,7 +312,10 @@ class AddContactPanel extends React.Component {
                         <input required className="form-control" placeholder="Enter Telephone" ref="newContactTelephone" type="text" name="newContactTelephone" />
                     </div>
                     <div className="col-xs-12 text-right">
-                        <input type="submit" className="btn btn-default icon btn-success btn-incentive btn-incentive--full-width" name="submit" onClick={this.handleAddContact.bind(this)} value="Add Contact" />
+                        <button type="submit" className="btn btn-default icon btn-success btn-incentive btn-incentive--full-width" name="submit" onClick={this.handleAddContact.bind(this)} >
+                            <i className="fa fa-plus"></i>
+                            Add Contact
+                    </button>
                     </div>
                 </form>
             </div>
