@@ -1,3 +1,15 @@
+.modules-list {
+  clear: both;
+
+  li {
+    a {
+      i {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
 .scrollTop--cont {
   width: 100%;
   position: fixed;

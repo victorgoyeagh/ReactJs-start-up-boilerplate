@@ -213,7 +213,6 @@ class ContactItem extends React.Component {
         });
     }
     render() {
-        var classes = ['contact-list__item', { 'contact-list__item--outdoor': this.props.isOutdoor }];
         var styles = {
             showEditDisplay: {
                 "display": this.state.editMode ? 'block' : 'none'
@@ -223,7 +222,7 @@ class ContactItem extends React.Component {
             }
         }
         return (
-            <tr className={classNames(classes)}>
+            <tr className="contact-list__item">
                 <td className="col-sm-3">
                     <input onChange={this.handleChange.bind(this)} style={styles.showEditDisplay} className="form-control" ref="emContactName" type="text" value={this.state.inputValues.name} />
                     <label style={styles.hideEditDisplay}>{this.props.name}</label>

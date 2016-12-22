@@ -9,8 +9,13 @@ export class ModulesHome extends React.Component {
             <div className="row">
                 <div className="col-sm-12">
                     <h3>Modules list</h3>
-                    <ul className="list-unstyled">
-                        <li><Link to="/modules/contactlist">Contacts List</Link></li>
+                    <ul className="list-unstyled modules-list">
+                        <li>
+                            <Link to="/modules/contactlist">
+                                <i className="fa fa-address-book" aria-hidden="true"></i>
+                                Contacts List
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
