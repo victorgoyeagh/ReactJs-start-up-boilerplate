@@ -5,9 +5,21 @@
   border: none;
   z-index: 999;
 
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    @media (min-width: $screen-sm) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
   .navbar-collapse {
-    background-color: $color--white;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
     @media (max-width: $screen-sm-min) {
+      //padding-right: 15px;
+      //padding-left: 15px;
       background-color: $color--black;
       display: block;
       position: absolute;
@@ -22,9 +34,8 @@
         left: 0;
 
         .dropdown-toggle {
-          &:hover {
-            color: $color--black;
-          }
+          color: $color--white;
+
         }
 
         ul.dropdown-menu {
@@ -36,19 +47,30 @@
         a {
           color: $color--white;
 
-          &.hover {
-            background-color: #737272;
-            border-color: $color--black;
+          & > :focus {
+            background-color: none;
           }
         }
       }
     }
 
     .navbar-nav {
+      margin: 0;
       @media (max-width: $screen-sm) {
         width: 90%;
       }
       position: initial;
+
+      .dropdown--fullwidth {
+        position: initial;
+
+        div.dropdown-menu {
+          @media (min-width: $screen-sm) {
+            width: 100% !important;
+            top: 80px;
+          }
+        }
+      }
 
       li.dropdown:hover > div.dropdown-menu,
       li.dropdown:hover > ul.dropdown-menu {
@@ -59,13 +81,20 @@
 
       li {
         a {
+          background: none;
           color: $color--white;
           padding: 20px;
-          @media (min-width: $screen-sm) {
-            color: $color--black;
-          }
+          @media (min-width: $screen-sm) {}
 
-          &[aria-expanded="true"] {
+          &:hover {
+            background-color: #737272;
+            border-color: $color--black;
+            @media (min-width: $screen-sm) {
+              background-color: $color--white;
+              border-color: $color--black;
+            }
+          }
+          @media (min-width: $screen-sm) {
             color: $color--black;
           }
           @include font-size(1.5);
@@ -75,9 +104,29 @@
           }
         }
 
+        ul {
+          li {
+            a {
+              @media (min-width: $screen-sm) {
+                padding-top: 20px;
+                padding-bottom: 20px;
+              }
+
+              &:hover {
+                //background: $color--white;
+                color: $color--black;
+              }
+            }
+          }
+        }
+
         &.dropdown {
           div.dropdown-menu,
           ul.dropdown-menu {
+            ul {
+              padding: 0;
+            }
+
             li {
               a {
                 &:hover {
@@ -91,41 +140,24 @@
               @include hide-object();
               display: block;
               position: absolute;
+              @include transition(all, ease-in, 0.2s);
             }
             width: 100%;
-            @include transition(all, ease-in, 0.2);
             content: '';
             @include shadow(0px, 0px, 0px, $color-grey--wash-alt);
             border-radius: 0;
-            @include transition(all, ease-in, 0.2s);
 
-            a {
-              padding-top: 15px;
-              padding-bottom: 15px;
-            }
           }
         }
 
         div.dropdown-menu {
           .dropdown-cont {
-            padding: 0 20px 10px;
+            padding: 0 20px 0px 15px;
           }
         }
       }
     }
 
-    li.dropdown.dropdown--fullwidth {
-      position: initial;
-
-      div.dropdown-menu,
-      ul.dropdown-menu {
-        position: initial;
-        @media (min-width: $screen-sm) {
-          position: absolute;
-        }
-        width: 100%;
-      }
-    }
   }
 
   .navbar-header {

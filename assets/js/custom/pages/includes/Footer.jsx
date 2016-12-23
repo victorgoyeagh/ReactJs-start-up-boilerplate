@@ -45,8 +45,7 @@ export class Footer extends React.Component {
                                     </ul>
                                 </nav>
                                 <h6>Address.</h6>
-                                <p>Etiam et porttitor purus.<br />344 Lindel way, Stockholm, SO22 4AQ</p>
-
+                                <p>Etiam et porttitor purus.<br />344 Lindel way, Stockholm, SO22 4AQ</p> 
                             </div>
                             <div className="col-xs-12 col-sm-12 col-md-5">
                                 <div className="row">

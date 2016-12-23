@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 export class Main extends React.Component {
     render() {
         var bannerStyle = {
-            backgroundImage: "url('/assets/images/default/indexhead.jpg')"
+            backgroundImage: "url('/assets/images/default/12199.jpg')"
         }
         var featuresStyle = {
             backgroundImage: "url('/assets/images/default/agencies.jpg')"
@@ -13,7 +13,7 @@ export class Main extends React.Component {
 
             <div className="row">
                 <div className="col-xs-12">
-                    <section className="banner">
+                    <section className="banner" style={bannerStyle}>
                         <div className="video-container">
                             {/*
                             <div className="video">
@@ -43,7 +43,7 @@ export class Main extends React.Component {
                             </div>
                         </div>
                     </section>
-                    <section className="section features" style={featuresStyle}>
+                    <section className="section features">
                         <div className="container">
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6 col-md-4">

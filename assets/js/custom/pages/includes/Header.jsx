@@ -9,7 +9,7 @@ export class HeaderContainer extends React.Component {
                 <div className="header">
                     <div className="container">
                         <nav className="navbar">
-                            <div className="container-fluid">
+                            <div className="container">
                                 <div id="toggleHeader" className="navbar-header">
                                     <button id="toggleBtn" type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
                                         <span className="sr-only">Toggle navigation</span>
@@ -22,7 +22,9 @@ export class HeaderContainer extends React.Component {
                                     </Link>
                                 </div>
                                 <div id="toggleNav" className="navbar-collapse collapse">
-                                    {this.props.children}
+                                    <div id="mCustomScrollbar" className='scroll-content'>
+                                        {this.props.children}
+                                    </div>
                                 </div>
                             </div>
                         </nav>

@@ -6,8 +6,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, hashHistory } from "react-router";
 import { Link } from "react-router";
- 
-import { main as Main } from "./pages/Main"; 
+
+import { main as Main } from "./pages/Main";
 import { general as General } from "./pages/General";
 import { modules as Modules } from "./pages/ModulesContainer";
 import { forms as Forms } from "./pages/Forms";
@@ -30,9 +30,19 @@ ReactDOM.render(
     </Router>,
     document.getElementById("main")
 );
- 
+
 //attach scroll func to top button
 new ScrollTo("js-scrollTop", 0);
 
 //apply responsive bootstrap menu
 new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
+
+//apply scroll to mobile menu
+var scrollPane = document.querySelector(".scroll-content");
+$(scrollPane).mCustomScrollbar();
+
+setTimeout(function () {
+    var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
+    $(scrollInnerPane).height(window.innerHeight + "px");
+}, 500);
+
