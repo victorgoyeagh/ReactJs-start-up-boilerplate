@@ -93,12 +93,10 @@ export class WindowHelper {
 
     GetWindowsDim() {
         let _self = this;
-        window.onresize = (ev) => {
-            _self.windowDimensions.Width = window.innerWidth;
-            _self.windowDimensions.Height = window.innerHeight;
-        }
-
-        return _self.windowDimensions;
+        return {
+            width: window.innerWidth,
+            height: window.innerHeight
+        };
     }
 }
 

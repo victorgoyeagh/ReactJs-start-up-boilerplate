@@ -1,5 +1,6 @@
 import { scrollTo as ScrollTo } from "./modules/ScrollCtrl";
 import { menuCtrl as MenuCtrl } from "./modules/MenuCtrl";
+import { windowHelper as WindowHelper } from "./modules/HelperFunctions";
 
 //react
 import React from "react";
@@ -38,6 +39,50 @@ new ScrollTo("js-scrollTop", 0);
 new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
 
 //apply scroll to mobile menu
+/*var scrollPane = document.querySelector(".scroll-content");
+var scrollPaneInit = $(scrollPane).mCustomScrollbar();
+
+setTimeout(function () {
+    var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
+    $(scrollInnerPane).height(window.innerHeight + "px");
+}, 500);
+
+var wh = new WindowHelper();
+window.addEventListener("resize", function () {
+    console.log(wh.GetWindowsDim().width);
+    let smbp = 768;
+    if (wh.GetWindowsDim().width < smbp) {
+        $(scrollPaneInit).mCustomScrollBar('update');
+    } else {
+        $(scrollPaneInit).mCustomScrollBar('disable', true);
+    }
+});*/
+
+function initCustomScrollbar() {
+    let scrollPane = document.querySelector(".scroll-content");
+    let scrollPaneInit = $(scrollPane).mCustomScrollbar();
+
+    setTimeout(function () {
+        let scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
+        $(scrollInnerPane).height(window.innerHeight + "px");
+    }, 500);
+
+    /*
+    $(window).resize(function () {
+        if (window.innerWidth < 768) {
+            initCustomScrollbar();
+        } else {
+            $(scrollPane).mCustomScrollBar('destroy');
+        }
+    });*/
+}
+$(function () {
+    initCustomScrollbar();
+});
+
+
+
+/*
 var scrollPane = document.querySelector(".scroll-content");
 $(scrollPane).mCustomScrollbar();
 
@@ -45,4 +90,4 @@ setTimeout(function () {
     var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
     $(scrollInnerPane).height(window.innerHeight + "px");
 }, 500);
-
+*/

@@ -41,6 +41,10 @@ body {
   }
 }
 
+.modal-content {
+    border-radius: 0px;
+}
+
 .toggleMain {
   position: relative;
   z-index: -1;

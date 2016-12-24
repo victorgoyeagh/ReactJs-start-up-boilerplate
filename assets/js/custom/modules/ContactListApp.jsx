@@ -62,6 +62,8 @@ export class ContactsListApp extends React.Component {
                         Contact List
                     </h3>
                     <div className="contact-container">
+                        <a href="#" data-toggle="modal" data-target="#private-policy" title="Private Policy">Private Policy</a>
+
                         <AddContactPanel addNewContact={this.addContact.bind(this)} />
                         <ContactListPanel contacts={this.state.data} deleteContact={this.deleteContact.bind(this)} updateContact={this.updateContact.bind(this)} />
                     </div>
