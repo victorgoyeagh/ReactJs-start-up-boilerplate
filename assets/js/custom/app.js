@@ -38,56 +38,26 @@ new ScrollTo("js-scrollTop", 0);
 //apply responsive bootstrap menu
 new MenuCtrl("toggleBtn", "toggleNav", "toggleHeader", "toggleMain", true);
 
-//apply scroll to mobile menu
-/*var scrollPane = document.querySelector(".scroll-content");
-var scrollPaneInit = $(scrollPane).mCustomScrollbar();
 
-setTimeout(function () {
-    var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
-    $(scrollInnerPane).height(window.innerHeight + "px");
-}, 500);
+    function initCustomScrollbar() {
+        var ww = $(window).width();
+        var scrollPane = $(".scroll-content");
+        var scrollPaneInit = $(scrollPane).mCustomScrollbar();
 
-var wh = new WindowHelper();
-window.addEventListener("resize", function () {
-    console.log(wh.GetWindowsDim().width);
-    let smbp = 768;
-    if (wh.GetWindowsDim().width < smbp) {
-        $(scrollPaneInit).mCustomScrollBar('update');
-    } else {
-        $(scrollPaneInit).mCustomScrollBar('disable', true);
+        setTimeout(function () {
+            var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
+            $(scrollInnerPane).height(window.innerHeight + "px");
+        }, 500);
+
+        $(window).resize(function () {
+            if (window.innerWidth < 768) {
+                initCustomScrollbar();
+            } else {
+                $(scrollPane).mCustomScrollbar('destroy');
+            }
+        });
     }
-});*/
-
-function initCustomScrollbar() {
-    let scrollPane = document.querySelector(".scroll-content");
-    let scrollPaneInit = $(scrollPane).mCustomScrollbar();
-
-    setTimeout(function () {
-        let scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
-        $(scrollInnerPane).height(window.innerHeight + "px");
-    }, 500);
-
-    /*
-    $(window).resize(function () {
-        if (window.innerWidth < 768) {
-            initCustomScrollbar();
-        } else {
-            $(scrollPane).mCustomScrollBar('destroy');
-        }
-    });*/
-}
-$(function () {
-    initCustomScrollbar();
-});
-
-
-
-/*
-var scrollPane = document.querySelector(".scroll-content");
-$(scrollPane).mCustomScrollbar();
-
-setTimeout(function () {
-    var scrollInnerPane = $(scrollPane).find(".mCustomScrollBox");
-    $(scrollInnerPane).height(window.innerHeight + "px");
-}, 500);
-*/
+   
+    $(function(){
+        initCustomScrollbar();
+    });
